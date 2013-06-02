@@ -1,0 +1,4 @@
+picturama:
+  base_folder: '/home/davidsilveira/Pictures/cata/'
+  allowed_formats: ['jpg','png','jpeg']
+  

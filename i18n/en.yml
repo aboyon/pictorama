@@ -1,0 +1,11 @@
+picturama:
+  title: David Silveira pictures
+  album:
+    view: View album
+    pictures: Pictures here
+    size: album size
+  picture:
+    name: Picture name
+    comments: Comments
+    size: Size
+    Taken: "Taken on #{date}"

@@ -1,0 +1,11 @@
+picturama:
+  title: Fotos de David Silveira
+  album:
+    view: Ver album
+    pictures: Imagenes aca
+    size: "Tama&ntilde;o del album"
+  picture:
+    name: Nombre
+    comments: Comentarios
+    size: "Tama&ntilde;o"
+    Taken: "Imagen tomada el #{date}"
