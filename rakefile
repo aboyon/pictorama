@@ -33,3 +33,5 @@ namespace :thumbnail do
   end
 
 end
+
+task :default => [:test]
