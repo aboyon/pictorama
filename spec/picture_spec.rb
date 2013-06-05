@@ -1,5 +1,5 @@
 require 'mini_magick'
-require_relative '../lib/picturama'
+require_relative 'spec_helper'
 
 describe "For a given picture in a given album" do 
   
