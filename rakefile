@@ -1,9 +1,13 @@
+#!/usr/bin/env rake
 $:.push File.expand_path("../lib", __FILE__)
 
 require 'rubygems'
 require 'fileutils'
 require 'picturama'
 require 'mini_magick'
+require "bundler/gem_tasks"
+require "rake"
+require "rake/testtask"
 
 namespace :thumbnail do
 
@@ -34,4 +38,4 @@ namespace :thumbnail do
 
 end
 
-task :default => [:test]
+task :default
