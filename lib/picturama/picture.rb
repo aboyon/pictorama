@@ -7,9 +7,9 @@ module Picturama
 
     def initialize(args)
       super
-      @thumbnail = "#{File.dirname(path)}/thumb_#{File.basename(path)}"
-      @resized = "#{File.dirname(path)}/resized_#{File.basename(path)}"
-      @metainfo = "#{File.dirname(path)}/resized_#{File.basename(path)}.info"
+      @thumbnail = "#{File.dirname(path)}/thumbnails/#{Picturama::config['thumbnail_prefix']}#{File.basename(path)}"
+      @resized = "#{File.dirname(path)}/resized/resized_#{File.basename(path)}"
+      @metainfo = "#{File.dirname(path)}/resized/resized_#{File.basename(path)}.info"
     end
 
     def info

@@ -1,3 +1,4 @@
+require 'fileutils'
 require 'picturama/album'
 require 'picturama/picture'
 require 'picturama/version'

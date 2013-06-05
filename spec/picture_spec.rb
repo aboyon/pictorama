@@ -5,7 +5,9 @@ describe "For a given picture in a given album" do
   
   before :each do
     @target_exists_folder = "#{Dir.pwd}/spec/pictures"
-    @picture = Picturama::Album.new(:folder => @target_exists_folder).pictures.first
+    album = Picturama::Album.new(:folder => @target_exists_folder)
+    album.init_thumbnails
+    @picture = album.pictures.first
     @thumb_w = 100
   end
 
