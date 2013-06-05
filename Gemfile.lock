@@ -1,9 +1,10 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     diff-lcs (1.2.4)
     mini_magick (3.6.0)
       subexec (~> 0.2.1)
+    rake (10.0.3)
     rspec (2.13.0)
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
@@ -19,4 +20,5 @@ PLATFORMS
 
 DEPENDENCIES
   mini_magick (~> 3.6.0)
+  rake
   rspec
