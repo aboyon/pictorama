@@ -1,3 +1,7 @@
+require 'picturama/album'
+require 'picturama/picture'
+require 'picturama/version'
+
 module Picturama
 
   Dir["lib/picturama/*.rb"].each { |file| 
