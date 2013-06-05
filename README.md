@@ -2,6 +2,8 @@
 
 [![Build Status](https://travis-ci.org/aboyon/pictorama.png?branch=master)](https://travis-ci.org/aboyon/pictorama)
 [![Code Climate](https://codeclimate.com/github/aboyon/pictorama.png)](https://codeclimate.com/github/aboyon/pictorama)
+[![Coverage Status](https://coveralls.io/repos/aboyon/pictorama/badge.png)](https://coveralls.io/r/aboyon/pictorama)
+
 
 Welcome to *Pictorama*. An easy picture gallery based on directory and files
 
