@@ -38,8 +38,8 @@ and then you'll get an answer like this:
 ```
 Generating 30 thumbnails for folder /some/folder/ ...
 Size: 200x200
-Thumbnail generated for source 1.JPG. Target destination thumb_1.JPG
-Thumbnail generated for source 2.JPG. Target destination thumb_2.JPG
+Thumbnail generated from source 1.JPG. Target destination thumb_1.JPG
+Thumbnail generated from source 2.JPG. Target destination thumb_2.JPG
 ```
 # License
 
