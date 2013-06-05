@@ -1,5 +1,7 @@
 # Pictorama
 
+[![Code Climate](https://codeclimate.com/github/aboyon/pictorama.png)](https://codeclimate.com/github/aboyon/pictorama)
+
 Welcome to *Pictorama*. An easy picture gallery based on directory and files
 
 ### How to install
