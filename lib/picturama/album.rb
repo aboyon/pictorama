@@ -24,8 +24,16 @@ module Picturama
       end
     end
 
+    def folder
+      File.basename(@folder)
+    end
+
     def name
-      File.basename(@folder).humanize
+      folder.humanize
+    end
+
+    def slug
+      name.to_url
     end
 
     def count_pictures

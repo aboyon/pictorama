@@ -1,3 +1,5 @@
+require 'ext/string'
+require 'stringex'
 require 'fileutils'
 require 'picturama/album'
 require 'picturama/picture'
@@ -18,7 +20,7 @@ module Picturama
     Dir["#{album_source}/*"].each { |album|
       if File.directory?(album)
         potential_album = Picturama::Album.new(:folder => album)
-        albums.push(album)
+        albums.push(potential_album)
       end
     }
     albums

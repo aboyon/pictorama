@@ -1,13 +1,9 @@
 class String
 
-  def humanize(options)
+  def humanize
     
     if include?("-")
-      split("-").join(" ").downcase
-    end
-
-    if (options == :all_caps)
-      capitalize!
+      self.split("-").join(" ").downcase
     end
 
   end
