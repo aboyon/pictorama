@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://davidsilveira.me/picturama'
 
   s.add_dependency('mini_magick', '~> 3.6.0')
+  s.add_dependency('stringex', '~> 2.0.2')
 
   s.add_development_dependency 'rspec'
 
