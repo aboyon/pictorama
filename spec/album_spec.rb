@@ -33,9 +33,14 @@ describe "For a given folder" do
   it "verifies the album name is correct based on folder name" do
     expected_album_name = "dummy album"
     expected_album_folder = "dummy-album"
-    Picturama::albums(@target_exists_folder).first.name.should == expected_album_name
+    Picturama::albums(@target_exists_folder).first.name!.should == expected_album_name
     Picturama::albums(@target_exists_folder).first.folder.should == expected_album_folder
     Picturama::albums(@target_exists_folder).first.slug.should == expected_album_folder
+  end
+
+  it "checks the album info from the .info.yml file" do
+    album_title_expected = 'some pictures here'
+    @album.info['album']['name'].should == album_title_expected
   end
 
 
