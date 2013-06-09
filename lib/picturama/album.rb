@@ -7,6 +7,7 @@ module Picturama
       @folder = args[:folder]
       @thumbnails = "#{args[:folder]}/thumbnails"
       @resized = "#{args[:folder]}/resized"
+      @info = "#{args[:folder]}/.info.yml"
     end
 
     def pictures(order = true)
@@ -29,11 +30,19 @@ module Picturama
     end
 
     def name
+      if info.nil?
+        name!
+      else
+        info['album']['title']
+      end
+    end
+
+    def name!
       folder.humanize
     end
 
     def slug
-      name.to_url
+      name!.to_url
     end
 
     def count_pictures
@@ -62,6 +71,12 @@ module Picturama
     def init_resized
       unless has_resized?
         FileUtils.mkdir_p "#{@resized}"
+      end
+    end
+
+    def info
+      if File.exists?(@info)
+        YAML.load_file(@info)
       end
     end
 
