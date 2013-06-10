@@ -22,5 +22,9 @@ describe "For a given picture in a given album" do
     @picture.has_thumbnail?.should be_false
   end
 
+  it "checks the image basename" do
+    @picture.basename.should == 'king.jpg'
+  end
+
 
 end

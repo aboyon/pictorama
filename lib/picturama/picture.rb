@@ -7,9 +7,13 @@ module Picturama
 
     def initialize(args)
       super
-      @thumbnail = "#{File.dirname(path)}/thumbnails/#{Picturama::config['thumbnail_prefix']}#{File.basename(path)}"
-      @resized = "#{File.dirname(path)}/resized/resized_#{File.basename(path)}"
-      @metainfo = "#{File.dirname(path)}/resized/resized_#{File.basename(path)}.info"
+      @thumbnail = "#{File.dirname(path)}/thumbnails/#{Picturama::config['thumbnail_prefix']}#{basename}"
+      @resized = "#{File.dirname(path)}/resized/resized_#{basename}"
+      @metainfo = "#{File.dirname(path)}/resized/resized_#{basename}.info"
+    end
+
+    def basename
+      File.basename(path)
     end
 
     def info
@@ -27,6 +31,10 @@ module Picturama
     def remove_assoc
       File.delete(@thumbnail) if has_thumbnail?
       File.delete(@resized) if has_resized?
+    end
+
+    def type
+      File.extname(path).replace('.','')
     end
 
   end
