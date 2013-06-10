@@ -26,5 +26,9 @@ describe "For a given picture in a given album" do
     @picture.basename.should == 'king.jpg'
   end
 
+  it "checks the image extension" do
+    @picture.type.downcase.should == 'jpg'
+  end
+
 
 end

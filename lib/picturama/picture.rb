@@ -34,7 +34,7 @@ module Picturama
     end
 
     def type
-      File.extname(path).replace('.','')
+      File.extname(path).split('.').last
     end
 
   end
