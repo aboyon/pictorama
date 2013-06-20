@@ -1,3 +1,5 @@
+require 'fileutils'
+
 namespace :url do
   desc "Normalize album names name for URL format"
   task :sluglify, :source do |t, args|

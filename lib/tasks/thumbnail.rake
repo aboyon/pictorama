@@ -1,3 +1,5 @@
+require 'mini_magick'
+
 namespace :thumbnail do
 
   desc "Generate thumbnail for a given folder or just a single file"
