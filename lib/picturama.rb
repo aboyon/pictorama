@@ -20,7 +20,7 @@ module Picturama
     Dir["#{album_source}/*"].each { |album|
       if File.directory?(album)
         potential_album = Picturama::Album.new(:folder => album)
-        albums.push(potential_album)
+        albums.push(potential_album) if potential_album.valid?
       end
     }
     albums

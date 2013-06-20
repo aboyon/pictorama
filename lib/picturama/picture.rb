@@ -3,7 +3,7 @@ require 'picturama'
 module Picturama
   class Picture < File
     
-    attr_accessor :thumbnail
+    attr_accessor :thumbnail, :resized, :metainfo
 
     def initialize(args)
       super

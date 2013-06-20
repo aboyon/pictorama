@@ -80,6 +80,10 @@ module Picturama
       end
     end
 
+    def valid?
+      has_thumbnails? && !info.nil?
+    end
+
     protected
 
     def generate_sorting(filter)
