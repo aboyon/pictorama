@@ -1,11 +1,7 @@
 class String
 
   def humanize
-    
-    if include?("-")
-      self.split("-").join(" ").downcase
-    end
-
+    include?("-") ? self.split("-").join(" ").downcase : self
   end
 
 end

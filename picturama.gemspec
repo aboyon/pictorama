@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors     = ["David Silveira"]
   s.email       = 'jdsilveira@gmail.com'
   s.files       = `git ls-files`.split("\n")
-  s.homepage    = 'http://davidsilveira.me/picturama'
+  s.homepage    = 'http://davidsilveira.me/code/picturama-gem'
 
   s.add_dependency('mini_magick', '~> 3.6.0')
   s.add_dependency('stringex', '~> 2.0.2')

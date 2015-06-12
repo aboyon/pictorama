@@ -10,18 +10,12 @@ module Picturama
       @info = "#{args[:folder]}/.info.yml"
     end
 
-    def pictures(order = true)
-      if File.directory?(@folder)
-        list = []
+    def pictures(order = :basename)
+      [].tap do |list|
         filter = "#{@folder}/*.{#{Picturama::config['allowed_formats'].join(',')}}"
-        dir_list = generate_sorting(filter)
-        dir_list.each do |picture|
-          list.push(Picturama::Picture.new(picture))
-        end
-        unless order
-          list.reverse!
-        end
-        list
+        Dir[filter].sort_by{ |filename| File.send(order, "#{filename}") }.each { |picture| 
+          list << Picturama::Picture.new(picture)
+        }
       end
     end
 
@@ -30,11 +24,7 @@ module Picturama
     end
 
     def name
-      if info.nil?
-        name!
-      else
-        info['album']['title']
-      end
+      (info.nil?) ? name! : info['album']['title']
     end
 
     def name!
@@ -63,36 +53,19 @@ module Picturama
     end
 
     def init_thumbnails
-      unless has_thumbnails?
-        FileUtils.mkdir_p "#{@thumbnails}"
-      end
+      FileUtils.mkdir_p("#{@thumbnails}", :mode => 0775) unless has_thumbnails?
     end
 
     def init_resized
-      unless has_resized?
-        FileUtils.mkdir_p "#{@resized}"
-      end
+      FileUtils.mkdir_p("#{@resized}", :mode => 0775) unless has_resized?
     end
 
     def info
-      if File.exists?(@info)
-        YAML.load_file(@info)
-      end
+      YAML.load_file(@info) if File.exists?(@info)
     end
 
     def valid?
       has_thumbnails? && !info.nil?
-    end
-
-    protected
-
-    def generate_sorting(filter)
-      if (filter == :size)
-        dir_list = Dir[filter].sort_by{ |filename| File.size("#{filename}") }
-      else
-        dir_list = Dir[filter].sort_by{ |filename| File.ctime("#{filename}") }
-      end
-      dir_list
     end
 
   end
