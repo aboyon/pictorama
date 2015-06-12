@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    picturama (0.0.6)
+    picturama (1.0.0beta)
       mini_magick (~> 3.6.0)
       stringex (~> 2.0.2)
 
