@@ -2,32 +2,31 @@ require 'mini_magick'
 require_relative 'spec_helper'
 
 describe "For a given picture in a given album" do 
-  
-  before :each do
-    @target_exists_folder = "#{Dir.pwd}/spec/pictures"
-    album = Picturama::Album.new(:folder => @target_exists_folder)
-    album.init_thumbnails
-    @picture = album.pictures.first
-    @thumb_w = 100
-  end
+
+  let!(:target_exists_folder) { "#{Dir.pwd}/spec/pictures" }
+  let!(:album) { Picturama::Album.new(:folder => target_exists_folder) }
+  let!(:thumb_w) { 100 }
+  let!(:picture) { album.pictures.first }
+
+  before { album.init_thumbnails }
 
   it "generate thumbnail" do
-    @picture.has_thumbnail?.should be_false
-    thumb = MiniMagick::Image.open(@picture.path)
+    expect(picture.has_thumbnail?).to be_false
+    thumb = MiniMagick::Image.open(picture.path)
     thumb.resize "100x100"
     thumb.format "jpg"
-    thumb.write @picture.thumbnail
-    @picture.has_thumbnail?.should be_true
-    @picture.remove_assoc
-    @picture.has_thumbnail?.should be_false
+    thumb.write picture.thumbnail
+    expect(picture.has_thumbnail?).to be_true
+    picture.remove_assoc
+    expect(picture.has_thumbnail?).to be_false
   end
 
   it "checks the image basename" do
-    @picture.basename.should == 'king.jpg'
+    expect(picture.basename).to eq 'king.jpg'
   end
 
   it "checks the image extension" do
-    @picture.type.downcase.should == 'jpg'
+    expect(picture.type.downcase).to eq 'jpg'
   end
 
 
