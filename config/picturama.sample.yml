@@ -1,0 +1,7 @@
+picturama:
+  album_source: "%{album_path}"
+  allowed_formats: "%{album_format}" # array
+  thumbnail_prefix: "%{album_thumbnail_prefix}"
+  thumnail_default_size: "%{album_thumbnail_size}" #eg 200x200
+  resized_prefix: "%{album_resized_prefix}"
+  resized_default_size: "%{album_resized_size}" #eg 800x800

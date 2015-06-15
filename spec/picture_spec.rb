@@ -11,14 +11,14 @@ describe "For a given picture in a given album" do
   before { album.init_thumbnails }
 
   it "generate thumbnail" do
-    expect(picture.has_thumbnail?).to be_false
+    expect(picture.has_thumbnail?).to eq false
     thumb = MiniMagick::Image.open(picture.path)
     thumb.resize "100x100"
     thumb.format "jpg"
     thumb.write picture.thumbnail
-    expect(picture.has_thumbnail?).to be_true
+    expect(picture.has_thumbnail?).to eq true
     picture.remove_assoc
-    expect(picture.has_thumbnail?).to be_false
+    expect(picture.has_thumbnail?).to eq false
   end
 
   it "checks the image basename" do

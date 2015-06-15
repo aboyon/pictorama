@@ -1,3 +1,4 @@
 .rvmrc
 config/config.yml
 coverage/
+config/picturama.yml

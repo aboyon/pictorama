@@ -12,8 +12,8 @@ describe "For a given folder" do
   end
 
   it "check thumnails for images" do
-    expect(album.pictures.first.has_thumbnail?).to be_false
-    expect(album.pictures.first.has_resized?).to be_false
+    expect(album.pictures.first.has_thumbnail?).to eq false
+    expect(album.pictures.first.has_resized?).to eq false
   end
 
   it "check info for files" do

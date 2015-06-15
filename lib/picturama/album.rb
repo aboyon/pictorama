@@ -2,12 +2,11 @@ require 'picturama'
 
 module Picturama
   class Album
-    
+
     def initialize(args)
-      @folder = args[:folder]
-      @thumbnails = "#{args[:folder]}/thumbnails"
-      @resized = "#{args[:folder]}/resized"
-      @info = "#{args[:folder]}/.info.yml"
+      @folder     = args[:folder]
+      @thumbnails = "#{@folder}/thumbnails"
+      @resized    = "#{@folder}/resized"
     end
 
     def pictures(order = :basename)
@@ -61,7 +60,7 @@ module Picturama
     end
 
     def info
-      YAML.load_file(@info) if File.exists?(@info)
+      YAML.load_file("#{@folder}/.info.yml") if File.exists?("#{@folder}/.info.yml")
     end
 
     def valid?

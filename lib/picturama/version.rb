@@ -1,3 +1,3 @@
 module Picturama
-  VERSION = '1.0.0beta'
+  VERSION = '1.0.1'
 end

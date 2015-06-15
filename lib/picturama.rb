@@ -11,7 +11,7 @@ module Picturama
   Dir["lib/picturama/*.rb"].each { |file| require "#{Dir.pwd}/#{file}" }
 
   def self.config
-    YAML.load_file('config/config.yml')['picturama']
+    YAML.load_file('config/picturama.yml')['picturama']
   end
 
   def self.albums(album_source)
